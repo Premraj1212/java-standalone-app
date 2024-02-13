@@ -1,5 +1,6 @@
 package com.lm;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Main {
      * @param args array of String holding command line parameters
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // An object of Library Management to hold all transactions of books and their data
         LibraryManagement libraryManagement = new LibraryManagement();

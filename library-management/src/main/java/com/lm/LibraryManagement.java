@@ -1,9 +1,6 @@
 package com.lm;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -120,16 +117,15 @@ public class LibraryManagement {
      * @throws ArrayIndexOutOfBoundsException if book id does not fall in index range of ArrayList
      */
     public void borrowBook(String selectedBook) throws NullPointerException {
+        // checking if the book id is empty string or null
+        if (selectedBook.trim().equals("") || selectedBook == null) {
+            throw new NullPointerException("EMPTY/NULL Book Id: Returning to Main Menu");
+        }
+        int bookId = Integer.parseInt(selectedBook) - 1;
+        if (bookId < 0 || bookId > books.size()) {
+            throw new ArrayIndexOutOfBoundsException("BOOK ID NOT IN THE LIST: Returning to Main Menu");
+        }
         try {
-            // checking if the book id is empty string or null
-            if (selectedBook.trim().equals("") || selectedBook == null) {
-                throw new NullPointerException("EMPTY/NULL Book Id: Returning to Main Menu");
-            }
-
-            int bookId = Integer.parseInt(selectedBook) - 1;
-            if (bookId < 0 || bookId > books.size()) {
-                throw new ArrayIndexOutOfBoundsException("BOOK ID NOT IN THE LIST: Returning to Main Menu");
-            }
 
             Book book = books.get(bookId);
             book.bookIsNotAvailable();
@@ -148,16 +144,20 @@ public class LibraryManagement {
      * @throws ArrayIndexOutOfBoundsException if book id does not fall in index range of ArrayList
      */
     public void returnBook(String selectedBook) throws NullPointerException {
-        try {
-            // checking if the book id is empty string or null
-            if (selectedBook.trim().equals("") || selectedBook == null) {
-                throw new NullPointerException("EMPTY/NULL Book Id: Returning to Main Menu");
-            }
+        // checking if the book id is empty string or null
+        if (selectedBook == null || selectedBook.trim().isEmpty()) {
+            throw new NullPointerException("EMPTY/NULL Book Id: Returning to Main Menu");
+        }
+        int bookId = Integer.parseInt(selectedBook) - 1;
 
-            int bookId = Integer.parseInt(selectedBook) - 1;
-            if (bookId < 0 || bookId > books.size()) {
-                throw new ArrayIndexOutOfBoundsException("BOOK ID NOT IN THE LIST: Returning to Main Menu");
-            }
+        // Check if books list is null or empty
+        if (books == null || books.isEmpty()) {
+            throw new ArrayIndexOutOfBoundsException("BOOK LIST IS EMPTY: Returning to Main Menu");
+        }
+        if (bookId < 0 || bookId > books.size()) {
+            throw new ArrayIndexOutOfBoundsException("BOOK ID NOT IN THE LIST: Returning to Main Menu");
+        }
+        try {
 
             Book book = books.get(bookId);
             book.bookIsAvailable();
@@ -207,7 +207,7 @@ public class LibraryManagement {
      * @param filename a string specifying the full path and extension of data file, for example,  "resources/tasks.obj"
      * @return true if the reading operation was successful, otherwise false
      */
-    public boolean saveToFile(String filename) {
+    public boolean saveToFile(String filename) throws IOException {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(filename);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
@@ -218,9 +218,9 @@ public class LibraryManagement {
             fileOutputStream.close();
             return true;
 
-        } catch (Exception e) {
+        } catch (IOException e) {
             Messages.showMessage(e.getMessage(),true);
-            return false;
+            throw e;
         }
     }
 

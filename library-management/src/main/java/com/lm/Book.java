@@ -1,6 +1,8 @@
 package com.lm;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
 
     // A String that holds the title of a task and it cannot be empty or null.
     private String bookAuthor;
