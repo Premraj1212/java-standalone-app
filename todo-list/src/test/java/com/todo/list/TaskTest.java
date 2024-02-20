@@ -28,7 +28,7 @@ public class TaskTest {
 
     String validTitle="Test Title";
     String validProject="Test Project";
-    LocalDate validDueDate=LocalDate.parse("2024-01-14");
+    LocalDate validDueDate=LocalDate.now();
 
     /**
      * This method will execute before executing any Test.

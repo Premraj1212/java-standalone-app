@@ -57,10 +57,10 @@ public class ExpenseTest {
      */
     @Test
     void testExpenseDescription() {
-        log.debug("Testing description() method in {}", expense.description());
+        log.debug("Testing description() method in {}", expense.getDescription());
 
         // verify
-        assertEquals(description,expense.description());
+        assertEquals(description,expense.getDescription());
     }
     /**
      * This method will validate the expense constructor method for invalid parameter

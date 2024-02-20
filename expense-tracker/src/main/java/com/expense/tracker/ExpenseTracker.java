@@ -1,9 +1,6 @@
 package com.expense.tracker;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -41,10 +38,11 @@ public class ExpenseTracker {
         expenses.stream()
                 .forEach(
                             expense -> System.out.println(String.format(displayFormat,
-                                    expense.date(),
-                                    expense.description(),
-                                    expense.category(),
-                                    expense.amount()))
+                                    expense.getDate(),
+                                    expense.getDescription(),
+                                    expense.getAmount(),
+                                    expense.getCategory())
+                            )
                 );
     }
 

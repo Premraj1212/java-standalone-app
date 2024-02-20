@@ -1,7 +1,6 @@
 package com.expense.tracker;
 
-import com.github.tomaslanger.chalk.Chalk;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
