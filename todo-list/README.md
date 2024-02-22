@@ -22,3 +22,10 @@ This program will save all tasks in the data file, therefore, next time when you
     * remove (delete) tasks
 * Support a text-based user interface
 * Load and save task list to data file
+
+### Jacoco - Unit test coverage tool
+
+![jacoco Report](image/todo-jacoco-report.PNG)
+
+### Maven Surefire Unit Test Report for the execution below:
+![maven_surefire Report](image/todo-surefire-report.PNG)

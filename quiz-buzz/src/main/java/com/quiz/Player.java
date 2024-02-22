@@ -15,6 +15,13 @@ public class Player {
         this.playerName = playerName;
         this.points = points;
     }
+    /**
+     * Creating an object of Player class
+     * @param playerName A String that holds the player name
+     */
+    public Player(String playerName) {
+        this.playerName = playerName;
+    }
 
     public Player() {
     }

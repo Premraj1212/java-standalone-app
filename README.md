@@ -11,7 +11,7 @@ A simple command line JAVA program for Library Management.
 
 ## Demonstrated usage of JaCoCo code coverage tool
 
-[Disclaimer :: I have made to attempt to learn the testing practices and long way to go.]
+[Disclaimer :: I have made an attempt to learn the unit testing practices and long way to go.]
 
 JaCoCo is a free and open-source code coverage library for Java, developed by the EclEmma team. 
 It helps you measure how much of your code is actually executed by your tests, providing valuable insights into the quality and 

@@ -19,3 +19,10 @@ This program will save all book details and their transactions in the data file,
     
 * Support a text-based user interface
 * Load and save book list to data file
+
+### Jacoco - Unit test coverage tool
+
+![jacoco Report](image/lm-jacoco-report.PNG)
+
+### Maven Surefire Unit Test Report for the execution below:
+![maven_surefire Report](image/lm-surefire-report.PNG)

@@ -21,3 +21,10 @@ This program will save all expense details and categorize them and finally store
     * return book
 * Support a text-based user interface
 * Load and save book list to data file
+
+### Jacoco - Unit test coverage tool
+
+![jacoco Report](image/expense-jacoco-report.PNG)
+
+### Maven Surefire Unit Test Report for the execution below:
+![maven_surefire Report](image/expense-surefire-report.PNG)
