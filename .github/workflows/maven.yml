@@ -32,7 +32,7 @@ jobs:
 
         
     - name: Run tests
-      run: mvn clean test --projects java-standalone-app/expense-tracker surefire-report:report
+      run: mvn clean test --projects expense-tracker surefire-report:report
 
     - name: Generate Test Report
       uses: dorny/test-reporter@v1
