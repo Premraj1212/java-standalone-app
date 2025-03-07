@@ -21,7 +21,7 @@ This program will manage all reservation details.
 
 ### Jacoco - Unit test coverage tool
 
-![jacoco Report](image/code-coverage-report.PNG)
+![jacoco Report](image/code-coverage-report.png)
 
 ### Maven Surefire Unit Test Report for the execution below:
-![maven_surefire Report](image/sure-fire-report.PNG)
+![maven_surefire Report](image/sure-fire-report.png)
